@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+int Suma(int n)
+{
+	if (n == 1)
+  return 1;
+	else 
+  return n + Suma(n - 1);
+}
+int main()
+{
+	int nr;
+	printf("nr= ");
+	scanf("%d", &nr);
+	printf("Suma este : %d\n", Suma(nr));
+	system("pause");
+	return 0;
+}
