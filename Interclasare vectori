@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+int a[] = { 2,5,7,9,12,15};
+int b[] = { 1,4,8,10,13,19 };
+int c[100];
+int n = 6, m = 6;
+
+void interclasare(int a[10],int b[10])
+{
+	int j = 0, i = 0, k = 0;
+	while (i < n && j < m)
+	{
+		if (a[i] < b[j])
+		{
+			k++;
+			c[k] = a[i];
+			i++;
+		}
+		else
+		{
+			k++;
+			c[k] = b[j];
+			j++;
+		}
+	}
+	while (i < n) //capat la b
+	{
+		k++;
+		c[k] = a[i];
+		i++;
+	}
+	while (j < m) // capat la a 
+	{
+		k++;
+		c[k] = b[j];
+		j++;
+	}
+
+	for(i=1;i<=k;i++)
+	printf(" %d   ", c[i]);
+}
+
+int main()
+{
+	interclasare(a,b);
+	system("pause");
+	return 0;
+}
